@@ -21,7 +21,7 @@ public class SignInServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
-        String pass = req.getParameter("pass");
+        String pass = req.getParameter("password");
         if (AccountService.containsProfile(login, pass)) {
             resp.getWriter().println("Authorized: " + login);
             resp.setContentType("text/html;charset=utf-8");

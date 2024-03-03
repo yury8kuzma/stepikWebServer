@@ -17,7 +17,7 @@ public class SignUpServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
-        String pass = req.getParameter("pass");
+        String pass = req.getParameter("password");
         AccountService.saveData(login, pass);
         resp.getWriter().println(UtilClass.getPath(UtilClass.INDEX_PAGE));
 
@@ -29,8 +29,6 @@ public class SignUpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         resp.getWriter().println(UtilClass.getPath(UtilClass.LOGIN_PAGE));
-
-
         resp.setContentType("text/html;charset=utf-8");
         resp.setStatus(HttpServletResponse.SC_OK);
     }
