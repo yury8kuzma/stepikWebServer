@@ -3,9 +3,10 @@ package service;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class AccountService {
-    private static final Map<String, String> loginSave = new HashMap<>();
+    private static final Map<String, String> loginSave = new ConcurrentHashMap<>();
 
     public static void saveData(String login, String pass) {
         loginSave.put(login, pass);

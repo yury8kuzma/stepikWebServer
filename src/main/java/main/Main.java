@@ -19,9 +19,7 @@ public class Main {
         FirstServlet firstServlet = new FirstServlet();
         SignUpServlet signUpServlet = new SignUpServlet();
         SignInServlet signInServlet = new SignInServlet();
-        Path path = Path.of(UtilClass.INDEX_PAGE);
-        Path abs = path.toAbsolutePath();
-        System.out.println(abs);
+
         Server server = new Server(8080);
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
